@@ -1,0 +1,27 @@
+<style>
+table, th, td {
+  border: 1px solid black;
+}
+</style>
+<a href="/">Sign in!</a>
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>PASSWORD</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% @post.each do |post| %>
+        <tr>
+            <td><%= post.title %></td>
+            <td><%= post.content %></td>
+            <td>
+              <a href="/modify/<%= post.id %>">modify</a>
+              <a href="/delete/<%= post.id %>">delete</a><br/>
+            </td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
